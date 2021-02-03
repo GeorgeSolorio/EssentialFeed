@@ -10,6 +10,7 @@
 		C0705B0425CAF5A400686A38 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0705AFA25CAF5A400686A38 /* EssentialFeed.framework */; };
 		C0705B0925CAF5A400686A38 /* EssentialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0705B0825CAF5A400686A38 /* EssentialFeedTests.swift */; };
 		C0705B0B25CAF5A400686A38 /* EssentialFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = C0705AFD25CAF5A400686A38 /* EssentialFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0705B1725CAF5B200686A38 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0705B1625CAF5B200686A38 /* FeedItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		C0705B0325CAF5A400686A38 /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0705B0825CAF5A400686A38 /* EssentialFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedTests.swift; sourceTree = "<group>"; };
 		C0705B0A25CAF5A400686A38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0705B1625CAF5B200686A38 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				C0705AFD25CAF5A400686A38 /* EssentialFeed.h */,
 				C0705AFE25CAF5A400686A38 /* Info.plist */,
+				C0705B1625CAF5B200686A38 /* FeedItem.swift */,
 			);
 			path = EssentialFeed;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				TargetAttributes = {
 					C0705AF925CAF5A400686A38 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					C0705B0225CAF5A400686A38 = {
 						CreatedOnToolsVersion = 12.4;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0705B1725CAF5B200686A38 /* FeedItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +345,7 @@
 		C0705B0F25CAF5A400686A38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -357,6 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Solorio.George.EssentialFeed;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -364,6 +371,7 @@
 		C0705B1025CAF5A400686A38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -388,6 +396,7 @@
 		C0705B1225CAF5A400686A38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2XZ3RGN8AK;
@@ -406,6 +415,7 @@
 		C0705B1325CAF5A400686A38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2XZ3RGN8AK;
