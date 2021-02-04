@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C053E03725CB8E7500F761A3 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C053E03625CB8E7500F761A3 /* RemoteFeedLoader.swift */; };
 		C0705B0425CAF5A400686A38 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0705AFA25CAF5A400686A38 /* EssentialFeed.framework */; };
 		C0705B0B25CAF5A400686A38 /* EssentialFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = C0705AFD25CAF5A400686A38 /* EssentialFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0705B1725CAF5B200686A38 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0705B1625CAF5B200686A38 /* FeedItem.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C053E03625CB8E7500F761A3 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
 		C0705AFA25CAF5A400686A38 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0705AFD25CAF5A400686A38 /* EssentialFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeed.h; sourceTree = "<group>"; };
 		C0705AFE25CAF5A400686A38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C053E03525CB8E6900F761A3 /* Feed API */ = {
+			isa = PBXGroup;
+			children = (
+				C053E03625CB8E7500F761A3 /* RemoteFeedLoader.swift */,
+			);
+			path = "Feed API";
+			sourceTree = "<group>";
+		};
 		C0705AF025CAF5A400686A38 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +85,7 @@
 		C0705AFC25CAF5A400686A38 /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
+				C053E03525CB8E6900F761A3 /* Feed API */,
 				C0705AFD25CAF5A400686A38 /* EssentialFeed.h */,
 				C0705AFE25CAF5A400686A38 /* Info.plist */,
 				C0705B1E25CAF7B500686A38 /* Feed Feature */,
@@ -211,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0705B1B25CAF61000686A38 /* FeedLoader.swift in Sources */,
+				C053E03725CB8E7500F761A3 /* RemoteFeedLoader.swift in Sources */,
 				C0705B1725CAF5B200686A38 /* FeedItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
