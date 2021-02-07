@@ -8,7 +8,7 @@
 import Foundation
 
 public enum HTTPClentResult {
-   case success(HTTPURLResponse)
+   case success(Data, HTTPURLResponse)
    case failure(Error)
 }
 
