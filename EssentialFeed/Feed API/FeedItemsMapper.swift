@@ -9,6 +9,22 @@ import Foundation
 
 final class FeedItemsMapper {
    
+   private struct Item: Decodable {
+      let id: UUID
+      let description: String?
+      let location: String?
+      let image: URL
+      
+      var item: FeedItem {
+         return FeedItem(
+            id: id,
+            description: description,
+            location: location,
+            imageURL: image
+         )
+      }
+   }
+   
    private struct Root: Decodable {
       let items: [Item]
       
@@ -26,21 +42,5 @@ final class FeedItemsMapper {
       }
       
       return .success(root.feed)
-   }
-
-   private struct Item: Decodable {
-      let id: UUID
-      let description: String?
-      let location: String?
-      let image: URL
-      
-      var item: FeedItem {
-         return FeedItem(
-            id: id,
-            description: description,
-            location: location,
-            imageURL: image
-         )
-      }
    }
 }
