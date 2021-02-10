@@ -56,44 +56,38 @@ class URLSessionHTTPClientTests: XCTestCase {
    
    func test_getFromURL_failsOnRequestError() {
       
-      let error = NSError(domain: "any error", code: 1)
-      URLProtocolStub.stub(data: nil, response: nil, error: error)
+      let requestError = NSError(domain: "any error", code: 1)
+      let recievedError = resultErrorFor(data: nil, response: nil, error: requestError)
 
-      let exp = expectation(description: "Wait for completion")
-      
-      makeSUT().get(from: anyURL()) { result in
-         switch result {
-         case let .failure(recievedError as NSError):
-            XCTAssertEqual(recievedError.code, error.code)
-         default:
-            XCTFail("Expected failure with error: \(error), got \(result) instead")
-         }
-         
-         exp.fulfill()
-      }
-      wait(for: [exp], timeout: 1.0)
+      XCTAssertNotNil(recievedError)
    }
    
    func test_getFromURL_failsOnAllNilValues() {
+      XCTAssertNotNil(resultErrorFor(data: nil, response: nil, error: nil))
+   }
+   
+   // MARK: - Helpers
+   
+   private func resultErrorFor(data: Data?, response: URLResponse?, error: Error?, file: StaticString = #filePath, line: UInt = #line) -> Error? {
       
-      URLProtocolStub.stub(data: nil, response: nil, error: nil)
+      URLProtocolStub.stub(data: data, response: response, error: error)
 
       let exp = expectation(description: "Wait for completion")
+      var recievedError: Error?
       
-      makeSUT().get(from: anyURL()) { result in
+      makeSUT(file: file, line: line).get(from: anyURL()) { result in
          switch result {
-         case .failure:
-           break
+         case let .failure(error):
+            recievedError = error
          default:
-            XCTFail("Expected failure, got \(result) instead")
+            XCTFail("Expected failure, got \(result) instead", file: file, line: line)
          }
          
          exp.fulfill()
       }
       wait(for: [exp], timeout: 1.0)
+      return recievedError
    }
-   
-   // MARK: - Helpers
    
    private func anyURL() -> URL {
       return URL(string: "https://any-url")!
