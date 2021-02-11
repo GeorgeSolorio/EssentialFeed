@@ -144,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				C0705B0A25CAF5A400686A38 /* Info.plist */,
-				C07E120F25D5A2E80096F41E /* Feed Cache */,
 				C0FD8B8825D4A3CC00D57357 /* Helpers */,
+				C07E120F25D5A2E80096F41E /* Feed Cache */,
 				C0BC953825D3133600C30159 /* FeedAPI */,
 			);
 			path = EssentialFeedTests;
