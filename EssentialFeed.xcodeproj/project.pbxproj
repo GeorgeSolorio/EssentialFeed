@@ -143,8 +143,9 @@
 		C0705B0725CAF5A400686A38 /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				C07E120F25D5A2E80096F41E /* Feed Cache */,
 				C0705B0A25CAF5A400686A38 /* Info.plist */,
+				C07E120F25D5A2E80096F41E /* Feed Cache */,
+				C0FD8B8825D4A3CC00D57357 /* Helpers */,
 				C0BC953825D3133600C30159 /* FeedAPI */,
 			);
 			path = EssentialFeedTests;
@@ -170,7 +171,6 @@
 		C0BC953825D3133600C30159 /* FeedAPI */ = {
 			isa = PBXGroup;
 			children = (
-				C0FD8B8825D4A3CC00D57357 /* Helpers */,
 				C0705B2125CAF88500686A38 /* LoadFeedFromRemoteUseCaseTests.swift */,
 				C0097F9D25D325CB0031A2E7 /* URLSessionHTTPClientTests.swift */,
 			);
