@@ -11,11 +11,11 @@ import EssentialFeed
 class LocalFeedLoader {
    
    private let store: FeedStore
-   private let currentData: () -> Date
+   private let currentDate: () -> Date
    
    init(store: FeedStore, currentDate: @escaping () -> Date) {
       self.store = store
-      self.currentData = currentDate
+      self.currentDate = currentDate
    }
    
    func save(_ items: [FeedItem], completion: @escaping (Error?) -> Void) {
@@ -26,12 +26,16 @@ class LocalFeedLoader {
          if let cacheDeletionError = error {
             completion(cacheDeletionError)
          } else {
-            self.store.insert(items, timestamp: self.currentData()) { [weak self] error in
-                  
-               guard self != nil else { return }
-               completion(error)
-            }
+            self.cache(items, with: completion)
          }
+      }
+   }
+   
+   private func cache(_ items: [FeedItem], with completion: @escaping (Error?) -> Void) {
+      store.insert(items, timestamp: currentDate()) { [weak self] error in
+         guard self != nil else { return }
+         
+         completion(error)
       }
    }
 }
