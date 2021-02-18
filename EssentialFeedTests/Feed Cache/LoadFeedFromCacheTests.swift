@@ -31,8 +31,13 @@ class LoadFeedFromCacheTests: XCTestCase {
       
       var recievedError: Error?
       let exp = expectation(description: "Wait for load to complete")
-      sut.load() { error in
-         recievedError = error
+      sut.load() { result in
+         switch result {
+         case let .failure(error):
+            recievedError = error
+         default:
+            XCTFail("Expected failure, for \(result) instead")
+         }
          exp.fulfill()
       }
       
@@ -44,8 +49,6 @@ class LoadFeedFromCacheTests: XCTestCase {
    private func anyNSError() -> NSError {
       return NSError(domain: "any error", code: 0)
    }
-   
-   // MARK: - Helpers
    
    private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #filePath, line: UInt = #line) -> (sut: LocalFeedLoader, store: FeedStoreSpy) {
       
